@@ -31,10 +31,6 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        MsgBox("Usted a descubierto la caja invisible, felicitaciones.")
-    End Sub
-
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         Dim f As Double
         f = InputBox("Ingresar el monto de la factura.")
