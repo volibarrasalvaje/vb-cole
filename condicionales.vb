@@ -14,8 +14,8 @@ Public Class Form1
         Dim pg As String
         c = InputBox("Ingrese el monto de la compra.")
         pg = InputBox("Ingrese la forma de pago de la compra.")
-        If pg = "efectivo" Then
-            c *= 1.2
+        If pg.ToLower() = "efectivo" Then
+            c *= 0.8
         End If
         MsgBox("El monto final a pagar, es " & c & ".")
     End Sub
@@ -25,13 +25,34 @@ Public Class Form1
         nota = InputBox("Ingresar la nota del alumno.")
         faltas = InputBox("Ingresar las faltas del alumno.")
         If nota >= 7 And faltas <= 3 Then
-            MsgBox("Aprobo, felicitaciones.")
+            MsgBox("Aprobo.")
         Else
-            MsgBox("A Diciembre.")
+            MsgBox("Desaprobado. A Diciembre.")
         End If
     End Sub
 
-    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
-        MsgBox("cajita invisible")
+    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        MsgBox("Usted a descubierto la caja invisible, felicitaciones.")
+    End Sub
+
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
+        Dim f As Double
+        f = InputBox("Ingresar el monto de la factura.")
+        If f >= 1000 And f <= 2000 Then
+            f *= 0.7
+        End If
+        MsgBox("El importe total de la factura es: " & f)
+    End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        Dim a, b, c As Double
+        a = InputBox("Ingrear la nota del primer trimestre.")
+        b = InputBox("Ingrear la nota del segundo trimestre.")
+        c = InputBox("Ingrear la nota del tercer trimestre.")
+        If (a + b + c) / 3 >= 7 And c >= 6 Then
+            MsgBox("Aprobado.")
+        Else
+            MsgBox("Desaprobado. A Diciembre.")
+        End If
     End Sub
 End Class
